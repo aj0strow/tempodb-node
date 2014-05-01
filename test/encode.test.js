@@ -1,5 +1,5 @@
 var assert = require('assert')
-var encode = require('../lib/encode')
+var encode = require('../lib/request/encode')
 
 describe('lib/encode', function () {
   it('should encode arrays directly', function () {

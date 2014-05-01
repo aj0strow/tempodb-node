@@ -1,6 +1,6 @@
 var assert = require('assert')
 var moment = require('moment-timezone')
-var isoformat = require('../lib/isoformat')
+var isoformat = require('../lib/request/isoformat')
 
 describe('lib/isoformat', function () {
   function format (time) {
