@@ -147,3 +147,27 @@ start=2012-01-08T00:21:54.000+0000
 end=2012-01-09T00:21:54.000+0000
 tz=America/Montreal
 ```
+
+## Contributing
+
+You'll need to sign up for a free tempodb instance. Create a `.env` file with tempodb key and secret. 
+
+```
+TEMPODB_KEY=******
+TEMPODB_SECRET=*****
+```
+
+Add the npm bin to your path.
+
+```
+export PATH="$PATH:node_modules/.bin/"
+```
+
+Clone or fork and clone repository, and then install and run tests.
+
+```
+$ npm install
+$ mocha
+```
+
+License: **MIT**

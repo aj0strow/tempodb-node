@@ -13,7 +13,7 @@ describe('lib/request/isoformat', function () {
   })
 
   it('should format string', function () {
-    var date = 'Jan 3, 2014 14:23:33'
+    var date = '2014-01-03T14:23:33'
     assert.equal('2014-01-03T14:23:33.000-0500', format(date))
   })
 })

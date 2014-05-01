@@ -83,4 +83,59 @@ describe('lib/client', function () {
       })
     })
   })
+
+  describe('skcreate', function () {
+    var data = [
+      { t: '2014-05-01T14:56:54.198-0400', v: 21.3589 },
+      { t: '2014-05-01T14:52:24.305-0400', v: 21.3589 }
+    ]
+
+    it('should create some datapoints', function (done) {
+      // the series is created if it doesnt exist
+      // lack of error indicates success
+      tempodb.skcreate('skcreate-0', data, done)
+    })
+  })
+
+  describe('sksingle', function () {
+    var key = 'sksingle-0'
+    var data = [
+      { t: '2014-05-01T14:56:54.198-0400', v: 21.3589 },
+      { t: '2014-05-01T14:52:24.305-0400', v: 5.6672 }
+    ]
+
+    before(function (done) {
+      tempodb.skcreate(key, data, done)
+    })
+
+    it('should get closest datapoint', function (done) {
+      tempodb.sksingle(key, null, function (e, response) {
+        assert.notEqual(null, response.data)
+        done(e)
+      })
+    })
+  })
+
+  describe('sksummary', function () {
+    var key = 'sksingle-0'
+    var data = [
+      { t: '2014-05-01T14:56:54.198-0000', v: 21.3589 },
+      { t: '2014-05-01T14:52:24.305-0000', v: 24.2005 }
+    ]
+
+    before(function (done) {
+      tempodb.skcreate(key, data, done)
+    })
+
+    it('should report a summary of data', function (done) {
+      var params = {
+        start: '2014-05-01T00:00:00.000-0000',
+        end: '2014-05-02T00:00:00.000-0000',
+      }
+      tempodb.sksummary(key, params, function (e, response) {
+        assert.notDeepEqual({}, response.summary)
+        done(e)
+      })
+    })
+  })
 })
