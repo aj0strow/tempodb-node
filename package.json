@@ -21,10 +21,13 @@
     "url": "http://github.com/aj0strow/tempodb-node.git"
   },
   "dependencies": {
-    "moment": "^2.6.0"
+    "moment": "^2.6.0",
+    "merge-descriptors": "0.0.2"
   },
   "devDependencies": {
     "mocha": "^1.18.2",
-    "moment-timezone": "0.0.6"
+    "moment-timezone": "0.0.6",
+    "async": "^0.8.0",
+    "dotenv": "^0.2.8"
   }
 }
