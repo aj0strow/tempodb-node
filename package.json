@@ -19,5 +19,12 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/aj0strow/tempodb-node.git"
+  },
+  "dependencies": {
+    "moment": "^2.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "moment-timezone": "0.0.6"
   }
 }
