@@ -2,7 +2,7 @@ var assert = require('assert')
 var moment = require('moment-timezone')
 var isoformat = require('../lib/request/isoformat')
 
-describe('lib/isoformat', function () {
+describe('lib/request/isoformat', function () {
   function format (time) {
     return isoformat(moment.tz(time, 'America/Montreal'))
   }

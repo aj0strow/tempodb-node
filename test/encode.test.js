@@ -1,7 +1,7 @@
 var assert = require('assert')
 var encode = require('../lib/request/encode')
 
-describe('lib/encode', function () {
+describe('lib/request/encode', function () {
   it('should encode arrays directly', function () {
     var query = encode({ a: [ 1, 2 ] })
     assert.equal('a=1&a=2', query)
